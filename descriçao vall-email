@@ -1,0 +1,8 @@
+no codigo de validar email utilizamos o INT, logico,funcao
+o codigo da matricula pedia os dados dos alunos e dos responsaveis caso o aluno fosse menor de idade
+pedia o nomje do curso
+  pedia o turno do curso
+  1 Manhã
+  2 tarde
+  3 noite
+  e pedia pra voce escolher uma das opcpes a cima
