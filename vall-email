@@ -1,0 +1,119 @@
+[15:13, 5/20/2025] 𝐸v𝑒𝘭ყ: …
+[15:13, 5/20/2025] 𝐸v𝑒𝘭ყ: programa
+{
+	inclua biblioteca Texto
+		
+		cadeia email_a, email_r, curso, matricula, nome, nome_r, telefone_r, continuar
+	inteiro INT, turno
+	
+	
+	funcao logico validarIdade(inteiro idade){
+		retorne (idade > 0)
+	}
+
+	funcao cadeia ValEmail (cadeia Email){
+		inteiro ValA, ValP, i, TamT
+		TamT = Texto.numero_caracteres(Email)
+		para(i = 0; i <= TamT; i++){
+			ValA = Texto.posicao_texto("@", Email, i)
+			ValP = Texto.posicao_texto(".com", Email, i)
+			se (ValA >= 0 e ValP >= 0){
+				retorne Email
+			}
+			senao se (ValA < 0 ou ValP < 0){
+				enquanto (ValA < 0 ou ValP < 0){
+					escreva("\nFormato de Email inválido. Tente Novamente\n")
+					escreva("Digite o seu email: ")
+					leia(Email)
+					ValA = Texto.posicao_texto("@", Email, 0)
+					ValP = Texto.posicao_texto(".com", Email, 0)
+				}
+				retorne Email
+			}
+		}
+		retorne Email
+	}
+
+	funcao inicio ()
+	{
+	
+	
+		escreva("Seja bem-vindo, por favor siga as instruções abaixo para realizar a matrícula","\n","\n")
+
+		enquanto (verdadeiro) {
+			escreva("Nome do aluno por gentileza:","\n")
+			leia(nome)
+
+			escreva("Sua idade por gentileza:","\n")
+			leia(INT)
+
+			se (nao validarIdade(INT)) {
+				escreva("Idade inválida","\n")
+			}
+
+			se (INT < 18) {
+				escreva("Insira os dados do seu responsável","\n")
+				escreva("Nome do responsável:","\n")
+				leia(nome_r)
+
+				escreva("Telefone de contato:","\n")
+				leia(telefone_r)
+
+				escreva("Email do responsável:","\n")
+				leia(email_r)
+				email_r = ValEmail(email_r)
+			}
+
+			escreva("Curso sendo feito:","\n")
+			leia(curso)
+
+			escreva("Turno do curso","\n")
+			escreva("1 Manhã","\n")
+			escreva("2 Tarde","\n")
+			escreva("3 Noite","\n")
+			escreva("Digite sua opção:","\n")
+			leia(turno)
+
+			escolha (turno) {
+				caso 1:
+					escreva("Manhã","\n")
+					pare
+				caso 2:
+					escreva("Tarde","\n")
+					pare
+				caso 3:
+					escreva("Noite","\n")
+					pare
+			}
+
+			escreva("Email do aluno:","\n")
+			leia(email_a)
+			email_a = ValEmail(email_a)
+
+			escreva("ID de matrícula","\n","EX: NOME - DATA DE NASCIMENTO - CURSO - TURNO","\n")
+			leia(matricula)
+
+			escreva("As informações são as seguintes","\n",
+				"Nome do aluno: ", nome, "\n",
+				"Idade do aluno: ", INT, "\n",
+				"Curso atual: ", curso, "\n",
+				"Turno do curso: ", turno, "\n",
+				"ID de matrícula: ", matricula, "\n",
+				"Email do aluno: ", email_a, "\n")
+
+			se (INT < 18) {
+				escreva("Nome do responsável: ", nome_r, "\n",
+					"Número de contato do responsável: ", telefone_r, "\n",
+					"Email do responsável: ", email_r, "\n")
+			}
+
+			escreva("matricula realizada com sucesso!")
+
+			escreva("\nDeseja realizar uma nova matrícula? (sim/nao): ")
+			leia(continuar)
+			se (continuar != "sim") {
+				pare		
+			} 
+		}
+	}
+}
