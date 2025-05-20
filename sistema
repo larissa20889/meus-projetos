@@ -1,0 +1,151 @@
+programa
+{
+    // Importa a biblioteca utilitária para sorteios
+    inclua biblioteca Util --> u
+
+    // Constantes
+    inteiro tamanho = 10
+
+    // Vetores para armazenar as senhas e cópias
+    inteiro senha[10]
+    inteiro copia[10]
+
+    // Gera 10 senhas aleatórias entre 1 e 999
+    funcao gerar_senha()
+    {
+        para (inteiro i = 0; i < tamanho; i = i + 1) {
+            senha[i] = u.sorteia(1, 999)
+        }
+    }
+
+    // Exibe o vetor informado
+    funcao exibir_vetor(inteiro vetor[], inteiro tamanho)
+    {
+        para (inteiro i = 0; i < tamanho; i = i + 1) {
+            escreva(vetor[i], " ")
+        }
+        escreva("\n")
+    }
+
+    // Copia um vetor para outro
+    funcao copiar_vetor(inteiro origem[], inteiro destino[], inteiro tamanho)
+    {
+        para (inteiro i = 0; i < tamanho; i = i + 1) {
+            destino[i] = origem[i]
+        }
+    }
+
+    // Ordena usando Bubble Sort
+    funcao bubble_sort(inteiro vetor[], inteiro tamanho)
+    {
+        inteiro i, j, temp
+        para (i = 0; i < tamanho - 1; i = i + 1) {
+            para (j = 0; j < tamanho - 1 - i; j = j + 1) {
+                se (vetor[j] > vetor[j + 1]) {
+                    temp = vetor[j]
+                    vetor[j] = vetor[j + 1]
+                    vetor[j + 1] = temp
+                }
+            }
+        }
+    }
+
+    // Função auxiliar do Merge Sort para mesclar subvetores
+    funcao merge(inteiro vetor[], inteiro inicio, inteiro meio, inteiro fim)
+    {
+        inteiro i = inicio, j = meio + 1, k = 0
+        inteiro temp[20] // tamanho suficiente para o vetor
+
+        enquanto (i <= meio e j <= fim) {
+            se (vetor[i] <= vetor[j]) {
+                temp[k] = vetor[i]
+                i = i + 1
+            } senao {
+                temp[k] = vetor[j]
+                j = j + 1
+            }
+            k = k + 1
+        }
+
+        enquanto (i <= meio) {
+            temp[k] = vetor[i]
+            i = i + 1
+            k = k + 1
+        }
+
+        enquanto (j <= fim) {
+            temp[k] = vetor[j]
+            j = j + 1
+            k = k + 1
+        }
+
+        // Copia de volta para o vetor original
+        para (i = 0; i < k; i = i + 1) {
+            vetor[inicio + i] = temp[i]
+        }
+    }
+
+    // Função principal do Merge Sort
+    funcao merge_sort(inteiro vetor[], inteiro inicio, inteiro fim)
+    {
+        se (inicio < fim) {
+            inteiro meio = (inicio + fim) / 2
+            merge_sort(vetor, inicio, meio)
+            merge_sort(vetor, meio + 1, fim)
+            merge(vetor, inicio, meio, fim)
+        }
+    }
+
+    // Função principal
+    funcao inicio()
+    {
+        inteiro opcao
+
+        // Gera senhas aleatórias no início do programa
+        gerar_senha()
+
+        // Laço de menu usando enquanto
+        enquanto (verdadeiro)
+        {
+            escreva("\n===== MENU DE SENHAS =====\n")
+            escreva("1 - Exibir senhas originais\n")
+            escreva("2 - Ordenar com Bubble Sort\n")
+            escreva("3 - Ordenar com Merge Sort\n")
+            escreva("4 - Sair\n")
+            escreva("Escolha uma opção: ")
+            leia(opcao)
+
+            // Processa a opção escolhida
+            escolha (opcao)
+            {
+                caso 1:
+                    escreva("\nSenhas originais:\n")
+                    exibir_vetor(senha, tamanho)
+                    pare
+
+                caso 2:
+                    copiar_vetor(senha, copia, tamanho)
+                    bubble_sort(copia, tamanho)
+                    escreva("\nSenhas ordenadas com Bubble Sort:\n")
+                    exibir_vetor(copia, tamanho)
+                    pare
+
+                caso 3:
+                    copiar_vetor(senha, copia, tamanho)
+                    merge_sort(copia, 0, tamanho - 1)
+                    escreva("\nSenhas ordenadas com Merge Sort:\n")
+                    exibir_vetor(copia,tamanho)
+                    pare
+
+                caso 4:
+                    escreva("Encerrando o sistema...\n")
+                     // Sair do enquanto
+                    pare
+            
+              caso contrario:
+                
+                    escreva("Opção inválida. Tente novamente.\n")
+            }
+        }
+    }
+}
