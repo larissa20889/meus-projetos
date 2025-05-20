@@ -1,0 +1,75 @@
+programa
+{
+     //vetor para representar a fila
+     inteiro fila [8]
+
+     //variaveis para controlar o inicio e fim da fila
+     inteiro inicia = 1
+     inteiro tam = 7, fim = -1
+
+     //funcao para enfileirar (inserir) um elemento
+     funcao enfileirar(inteiro valor)
+     {
+     	se(fim == tam)
+     {
+     		escreva ("erro: fila cheia!\n")	
+     	}
+     	senao
+     	{
+     fim = fim + 1
+     fila[fim] = valor
+     escreva("enfileirado: ", valor, "\n")
+     	}
+     }
+
+     //funcao para desenfileirar (remover) um elemento
+     funcao desenfileirar()
+     { 
+     	se (inicia > fim)
+     {
+     	escreva ("erro: fila vazia!\n")
+     }
+     
+     senao 
+     {
+	escreva ("desenfileirando: ",fila[inicia], "\n")
+	}
+}
+
+     //funcao para mostrar os elementos da fila
+     funcao mostrafila()
+     {
+     	escreva("\nconteudo da fila:\n")
+     	se(inicia > fim)
+     {
+     	escreva("fila vazia! \n")
+     }
+     senao
+     {
+     	para (inteiro i = inicia; i <= fim; i = i + 1)
+     {
+     	escreva (fila[i], "\n")
+     }
+     }
+     }
+      //funcao para adicionar multiplos numeros a fila
+         funcao adiciona_numeros()
+      {
+         	para (inteiro j = 1; j < 8; j = j + 1)
+      {
+         		enfileirar(j)
+       	}
+         }  
+	funcao inicio()
+	{
+	 //inicializa inicio e fim
+	 inicia = 1
+	 fim = -1
+
+	 adiciona_numeros()
+	 mostrafila()
+	 enfileirar(3)
+	 desenfileirar()
+	}
+
+	}
