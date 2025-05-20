@@ -1,0 +1,1 @@
+algoritmo de ordenação de senhas de atendimento. foi utilizado biblioteca, funções, vetor bubble sort, merge sort este programa foi criado para gerar senhas MENU DE SENHAS 1 - Exibir senhas originais 2 - Ordenar com Bubble Sort 3 - Ordenar com Merge Sort 4 - Sair com isso voce ira escolhe uma das opções a cima
