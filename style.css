@@ -1,0 +1,464 @@
+/* Reset geral */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #834949;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Cabeçalho fixo */
+header {
+  background-color: #7e1b1b;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo img {
+  height: 50px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ffe100;
+}
+
+/* Seção de destaque */
+#destaque {
+  background: url('fundo-bobs.jpg') center/cover no-repeat;
+  padding: 6rem 2rem;
+  text-align: center;
+  color: white;
+}
+
+#destaque h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
+
+#destaque p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.botao {
+  background-color: #ee73988f;
+  color: #000000;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.botao:hover {
+  background-color: #dd93b8;
+}
+
+/* Cardápio */
+#cardapio {
+  padding: 4rem 2rem;
+  background-color: white;
+  text-align: center;
+}
+
+#cardapio h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.itens-cardapio {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.item {
+  background: #fff3f3;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 280px;
+  padding: 1rem;
+  transition: transform 0.3s;
+}
+
+.item:hover {
+  transform: scale(1.05);
+}
+
+.item img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.item h3 {
+  margin-top: 0.5rem;
+  color: #000000b6;
+}
+
+.item p {
+  font-size: 0.95rem;
+  margin: 0.5rem 0;
+}
+
+.item span {
+  display: block;
+  font-weight: bold;
+  color: #444;
+}
+
+/* Botão PDF */
+.botao-download {
+  display: inline-block;
+  margin-top: 2rem;
+  background-color: #d000008c;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.botao-download:hover {
+  background-color: #000000;
+}
+
+/* Promoções */
+
+  #btn-promocoes {
+    background-color: #ff0044;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease, transform 0.2s;
+  }
+
+  #btn-promocoes:hover {
+    background-color: #e6003c;
+    transform: scale(1.05);
+  }
+
+#promocoes {
+  background-color: #fff5f5;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.promocao img {
+  width: 300px;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.promocao h3 {
+  color: #690d0d;
+}
+.promocao-card {
+  display: inline-block;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin: 10px;
+  width: 280px;
+  text-align: center;
+}
+
+.promocao-card h3 {
+  color: #c60024;
+  margin-bottom: 10px;
+}
+
+.promocao-card p {
+  font-size: 14px;
+  color: #333;
+}
+
+.promocao-btn {
+  margin-top: 10px;
+  background-color: #c60024;
+  color: rgb(237, 243, 239);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.promocao-btn:hover {
+  background-color: #a8001d;
+}
+
+combo-card {
+      display: inline-block;
+      background: #f0eeee;
+      border-radius: 16px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin: 10px;
+      width: 280px;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .combo-card h3 {
+      color: #c60024;
+      margin-bottom: 10px;
+    }
+
+    .combo-card p {
+      font-size: 14px;
+      color: #333;
+    }
+
+    .combo-btn {
+      margin-top: 10px;
+      background-color: #c60024;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .combo-btn:hover {
+      background-color: #a8001d;
+    }
+
+    #mensagem-cupom-combo {
+      margin-top: 30px;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+#mensagem-cupom {
+  margin-top: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#share-button {
+  background-color: #e2231a;
+  color: white;
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin: 1rem auto;
+  display: block;
+}
+
+#share-button:hover {
+  background-color: #1b3f8b;
+}
+#share-button {
+  background-color: #e2231a;
+  color: white;
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin: 1rem auto;
+  display: block;
+}
+
+#share-button:hover {
+  background-color: #1b3f8b;
+}
+/* Cadastro */
+#cadastro {
+  background-color: #fdf2f2;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+#cadastro form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#cadastro input, #cadastro button {
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+#cadastro button {
+  background-color: #a52121;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#cadastro button:hover {
+  background-color: #911c1c;
+}
+
+/* Mensagem pós-cadastro */
+#mensagem {
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+/* Rodapé */
+footer {
+  background-color: #222;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .itens-cardapio {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .item {
+    width: 90%;
+
+    div {
+  background-image: url('caminho/para/imagem.jpg');
+  width: 300px;
+  height: 200px;
+
+  /* Container da seção de comentários */
+.comentarios-section {
+  background-color: #bb1313;
+  padding: 2rem;
+  border-radius: 16px;
+  max-width: 800px;
+  margin: 2rem auto;
+  box-shadow: 0 4px 12px rgba(99, 2, 2, 0.1);
+}
+
+/* Título da seção */
+.comentarios-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #a36360;
+  text-align: center;
+}
+
+/* Formulário de comentário */
+.comentarios-form {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  color: #a36360;
+  margin-bottom: 2rem;
+}
+
+/* Campo de texto */
+.comentarios-form textarea {
+  resize: none;
+  height: 100px;
+  padding: 1rem;
+  font-size: 1rem;
+  border: 1px solid #646150;
+  border-radius: 12px;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.comentarios-form textarea:focus {
+  border-color: #eba1a1;
+}
+
+/* Botão de enviar */
+.comentarios-form button {
+  align-self: flex-end;
+  background-color: #000000;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.comentarios-form button:hover {
+  background-color: #1f0b17;
+}
+
+/* Lista de comentários */
+.lista-comentarios {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* Comentário individual */
+.comentario {
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 12px;
+  border-left: 4px solid #a75886;
+  box-shadow: 0 2px 8px rgba(197, 44, 69, 0.05);
+}
+
+/* Texto do comentário */
+.comentario p {
+  margin: 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+}
+  }
+}
